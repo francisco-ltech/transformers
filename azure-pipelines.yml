@@ -25,6 +25,6 @@ steps:
     displayName: "Install dependencies"
 
   - script: |
-      pip install pytest pytest-azurepipelines numpy
+      pip install pytest pytest-azurepipelines
       python -m pytest
-    displayName: "pytest"
+    displayName: "Run tests"
