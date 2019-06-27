@@ -19,3 +19,13 @@ $ python3 -m pytest
 ```sh
 $ python3 setup.py bdist_egg
 ```
+
+### Troubleshooting
+
+HINT: remove **pycache** / .pyc files and/or use a unique basename for your test file modules
+
+Delete **pycache**
+
+```sh
+$ rm -rf tests/__pycache__
+```
