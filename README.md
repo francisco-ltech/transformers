@@ -29,3 +29,19 @@ Delete **pycache**
 ```sh
 $ rm -rf tests/__pycache__
 ```
+
+### How to use
+
+0. Import package into Databricks
+
+1. Import transformers as required
+   from transformers.plus_one_transformer import PlusOneTransformer
+   from transformers.plus_three_transformer import PlusThreeTransformer
+
+1. Add static configuration for entities
+   customer_transformations = [PlusOneTransformer("age", "age_plus_one"), PlusThreeTransformer("age", "age_plus_three")]
+   invoice_transformations = [PlusOneTransformer("age", "age_plus_one")]
+
+1. Execute transformations
+   model = Pipeline(stages=entities[entity]).fit(source_df)
+   model.transform(source_df).show()
